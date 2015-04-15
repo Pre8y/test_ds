@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct node{
+	int data;
+	struct node *next;
+} node;
+
+int main(int argc, char** argv)
+{
+	node **head;
+	int a = 9;
+	node *first = (node*)malloc(sizeof(node*));
+	first->data = a;
+	first->next = NULL;
+	node *second = (node*)malloc(sizeof(node*));
+	second->data=8;
+	second->next=NULL;
+	printf("\n%d", first->data);
+	printf("\n%d", second->data);
+	*head = first;
+	node *current=*head;
+	printf("\n%d", current->data);
+	current->next=second;
+	printf("\n%d", current->next->data);
+	return 0;
+}
