@@ -14,5 +14,8 @@ int main(int argc, char **argv)
 	printf("\nafter three nodes--\n");
 	inorder(root);
 
+	insert(&root, 5);
+	printf("\nafter four nodes--\n");
+	inorder(root);
 	return 0;
 }

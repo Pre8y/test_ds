@@ -11,8 +11,8 @@ node* init(void)
 void insert(node **head, int data)
 {
 	node *temp = NULL;
-       if(!(*head)){	
-		
+	if(!(*head)){	
+
 		temp = malloc(sizeof(node));
 		if(temp==NULL)
 			exit(1);
@@ -23,15 +23,20 @@ void insert(node **head, int data)
 	}
 	else
 	{
-		if(data<=(*head)->data)
+		node *root = *head;
+		if (data == (root)->data) {
+			printf("Error inserting duplicate element %d\n", data);
+			return;
+		}
+		if(data<(root)->data)
 		{
-			insert(&((*head)->left), data);
+			insert(&((root)->left), data);
 		}
 		else
 		{
-			insert(&((*head)->right), data);
+			insert(&((root)->right), data);
 		}
-		
+
 	}
 }
 
